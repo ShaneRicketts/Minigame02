@@ -586,6 +586,7 @@ GameObject:
   - component: {fileID: 1049171333411866237}
   - component: {fileID: 1049171333250909724}
   - component: {fileID: -856055107343421393}
+  - component: {fileID: 7595197970397248793}
   m_Layer: 0
   m_Name: White Stag
   m_TagString: Untagged
@@ -661,6 +662,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f210b2264e213b94baeb60e39a3d2bbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &7595197970397248793
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049171333404585211}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1251874, y: 0.46031195, z: 0.39479914}
+  m_Center: {x: -0.00008537553, y: 0.22824338, z: 0.04684006}
 --- !u!1 &1049171333404604791
 GameObject:
   m_ObjectHideFlags: 0
