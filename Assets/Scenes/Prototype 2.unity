@@ -448,7 +448,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 25, z: 7.5}
+  m_LocalPosition: {x: 0, y: 30.06, z: 7.5}
   m_LocalScale: {x: 1, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -693,3 +693,4 @@ MonoBehaviour:
   xRange: 20
   projectile: {fileID: 3321458507071968625, guid: c3bc6daf831b048409acddce913f7f1d,
     type: 3}
+  projectileOffset: {x: 0, y: 1, z: 1}
