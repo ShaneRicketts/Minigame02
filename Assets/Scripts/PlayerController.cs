@@ -4,27 +4,40 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //Movement Variables
     public float horizontalInput;
+    public float verticalInput;
     public float speed = 10;
-    public float xRange = 10;
-    public GameObject projectile;
-    public Vector3 projectileOffset = new Vector3(0, 1, 0.5f);
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
+    //Movement Boundary Variables
+    public float xRange = 10;
+    public float zRangeTop = 15;
+    public float zRangeBottom = 8;
+
+    //Projectile Setting Variables
+    public GameObject projectile;
+    public Transform projectileSpawnPoint;
+
     void Update()
     {
-        //shoot projectile from player
+        ShootProjectile();
+
+        StayInBounds();        
+
+        Movement();
+    }
+
+    void ShootProjectile()
+    {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(projectile, transform.position + projectileOffset, projectile.transform.rotation);
+            Instantiate(projectile, projectileSpawnPoint.position, projectile.transform.rotation);
         }
+    }
 
-        //keep the player in bounds
+    void StayInBounds()
+    {
+        //Horizontal boundary
         if (transform.position.x < -xRange)
         {
             transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
@@ -34,7 +47,25 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
         }
 
+        //Vertical Boundary
+        if (transform.position.z < -zRangeBottom)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, -zRangeBottom);
+        }
+        if (transform.position.z > zRangeTop)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, zRangeTop);
+        }
+    }
+
+    void Movement()
+    {
+        //Move Horizontally
         horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * horizontalInput * speed * Time.deltaTime);
+
+        //Move Vertically
+        verticalInput = Input.GetAxis("Vertical");
+        transform.Translate(Vector3.forward * verticalInput * speed * Time.deltaTime);
     }
 }

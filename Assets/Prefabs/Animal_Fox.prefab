@@ -341,9 +341,10 @@ GameObject:
   - component: {fileID: 7514359508913130164}
   - component: {fileID: -6138181192361425549}
   - component: {fileID: 5514442538811749366}
+  - component: {fileID: 7395853019469404562}
   m_Layer: 0
   m_Name: Red Fox
-  m_TagString: Untagged
+  m_TagString: Animal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -431,6 +432,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.053669997, y: 0.2031929, z: 0.3130568}
   m_Center: {x: -0.00042815506, y: 0.10059755, z: 0.011680866}
+--- !u!114 &7395853019469404562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7514359508783398179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb0a8d54009e4ac489fcaceb36538e5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: Player
 --- !u!1 &7514359508783535225
 GameObject:
   m_ObjectHideFlags: 0

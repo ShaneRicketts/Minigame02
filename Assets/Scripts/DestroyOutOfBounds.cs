@@ -6,20 +6,34 @@ public class DestroyOutOfBounds : MonoBehaviour
 {
     private float topBound = 30;
     private float lowerBound = -10;
-    // Start is called before the first frame update
+    private float sideBound = 30;
+
+    private GameManager gameManager;
+
     void Start()
     {
-        
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         if (transform.position.z > topBound)
         {
             Destroy(gameObject);
-        }else if (transform.position.z < lowerBound) {
-            Debug.Log("Game Over!");
+        }
+        else if (transform.position.z < lowerBound)
+        {
+            gameManager.Addlives(-1);
+            Destroy(gameObject);
+        }
+        else if (transform.position.x > sideBound)
+        {
+            gameManager.Addlives(-1);
+            Destroy(gameObject);
+        }
+        else if (transform.position.x < -sideBound)
+        {
+            gameManager.Addlives(-1);
             Destroy(gameObject);
         }
     }
