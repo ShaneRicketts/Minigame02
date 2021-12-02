@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        spawnManager = GameObject.Find("Spawn Manager").GetComponent<SpawnManager>();
+        //spawnManager = GameObject.Find("Spawn Manager").GetComponent<SpawnManager>();
     }
 
     public void Addlives(int value)
@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
         {
             lives = 0;
             Debug.Log("Game Over!");
-            spawnManager.CancelInvoke("SpawnRandomAnimal");
+            //spawnManager.CancelInvoke("SpawnRandomAnimal");
         }
 
         Debug.Log("Lives = " + lives);
