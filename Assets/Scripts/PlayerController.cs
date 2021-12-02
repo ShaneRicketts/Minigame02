@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 10;
     public float xRange = 10;
     public GameObject projectile;
+    public Vector3 projectileOffset = new Vector3(0, 1, 0.5f);
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +21,7 @@ public class PlayerController : MonoBehaviour
         //shoot projectile from player
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(projectile, transform.position, projectile.transform.rotation);
+            Instantiate(projectile, transform.position + projectileOffset, projectile.transform.rotation);
         }
 
         //keep the player in bounds

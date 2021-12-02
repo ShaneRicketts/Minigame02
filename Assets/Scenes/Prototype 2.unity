@@ -690,6 +690,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalInput: 0
   speed: 10
-  xRange: 10
+  xRange: 20
   projectile: {fileID: 3321458507071968625, guid: c3bc6daf831b048409acddce913f7f1d,
     type: 3}
